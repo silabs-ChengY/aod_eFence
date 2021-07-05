@@ -103,7 +103,7 @@ Create a ncp-empty project, and install the components below.
 * RAIL Utility, AoX (Utility to aid with Angle of Arrival/Departure (AoX) Configuration)
 * AoA Receiver (Bluetooth AoA CTE receiving feature)
 
-For the RAIL Utility, AoX component, please configure the Number of AoX Antenna Pins as 4, and the SL_RAIL_UTIL_AOX_ANTENNA_PIN0-SL_RAIL_UTIL_AOX_ANTENNA_PIN3 as PC04-PC07 respectively.
+For the RAIL Utility, AoX component, please configure the Number of AoX Antenna Pins as 4, and configure the SL_RAIL_UTIL_AOX_ANTENNA_PIN0-SL_RAIL_UTIL_AOX_ANTENNA_PIN3 as PC04-PC07 respectively.
 
 ## Build the AoA_Locator project
 With the v3.2.0 Bluetooth SDK release, there is **AoA Analyzer** tool which is a Java based application, built into Simplicity Studio 5, that showcases the angle estimation skills of the RTL library in a graphical user interface.
@@ -119,3 +119,17 @@ If want to calculate and expose the calculated angle information in the single A
 在v3.2.0中，AoA_Locator可以支持两种模式，直接publish IQ sample数据，或者publish计算得出的angle数据。
 
 ## Build the AoD_Locator project
+Copy the aod_locator project to the folder below, and build with the command "make".
+
+## Create the AoD SoC mode Asset project base on soc-empty example
+Create a soc-empty project, and install the components below.
+* RAIL Utility, AoX (Utility to aid with Angle of Arrival/Departure (AoX) Configuration)
+* AoA Receiver (Bluetooth AoA CTE receiving feature)
+
+For the RAIL Utility, AoX component, please configure the Number of AoX Antenna Pins as 4, and configure the SL_RAIL_UTIL_AOX_ANTENNA_PIN0-SL_RAIL_UTIL_AOX_ANTENNA_PIN3 as PC04-PC07 respectively.
+
+For the soc mode AoD tag, it will send the IQ sample data to the gateway device via bluetooth connection, and the gateway is responsible for angle calculation.
+
+## Build the AoD Gateway project
+
+
