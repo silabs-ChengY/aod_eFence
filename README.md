@@ -119,7 +119,7 @@ If want to calculate and expose the calculated angle information in the single A
 在v3.2.0中，AoA_Locator可以支持两种模式，直接publish IQ sample数据，或者publish计算得出的angle数据。
 
 ## Build the AoD_Locator project
-Copy the aod_locator project to the folder below, and build with the command "make".
+Copy the aod_locator project to the folder below, and build with the command "make APP_MODE=silabs ANGLE=1".
 
 ## Create the AoD SoC mode Asset project base on soc-empty example
 Create a soc-empty project, and install the components below.
@@ -131,5 +131,14 @@ For the RAIL Utility, AoX component, please configure the Number of AoX Antenna 
 For the soc mode AoD tag, it will send the IQ sample data to the gateway device via bluetooth connection, and the gateway is responsible for angle calculation.
 
 ## Build the AoD Gateway project
+Buidl the project with the command below.
+```make ANAGLE=1```
 
+# How to run?
 
+## Run aod_locator host application
+Configure your locator configuration file, and then execute the command below. "/dev/cu.usbmodem0004401912961" is the COM port of your asset tag working on NCP mode.
+./exe/aod_locator -c config/singlelocator_config.json -u /dev/cu.usbmodem0004401912961
+
+## Run the aod_gateway host application
+./exe/aod_gateway -u /dev/cu.usbmodem0004401725861
