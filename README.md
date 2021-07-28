@@ -97,14 +97,16 @@ Below is the system block diagram for the case of AoD tag asset works in NCP mod
 * Open MSYS2 MinGW 64 bit, browse to the **aod_gateway** folder and run 'make'   
 * Make sure mqtt broker is running   
 * start the **aod_gateway** app like this:   
-    ./exe/aod_gateway.exe -c xxx.jason -u COM8   
-    where the COM port should be the COM port of the BG22 board programmed with NCP empty demo image.   
+    ```./exe/aod_gateway.exe -c xxx.jason -u COM8```   
+    Where the COM port should be the COM port of the BG22 board programmed with NCP empty demo image.   
 * start mqtt explorer, and check if you can see the angles calculated for each locator   
 <div align="center">
   <img src="image/mqtt_explorer.png">  
-</div>  
-* start the aoa_multilocator and aoa_multilocator_gui apps as described in AN1296   
-    Note: the multilocator_configuration should be exactly the same for AoD as it is for AoA   
+</div>   
+
+* Execute the python script **aod_gui**, it will subscribe the MQTT topic for receiving the position and angle data of each tag, and show the tag in GUI.
+  ```python3 app.py -c ../aod_gateway/config/xxx.json```
+    Note: The multilocator configuration file should be exactly the same for aod_gateway program.
 
 Below is the system block diagram for the case of AoD tag asset works in SoC mode.   
 
@@ -115,7 +117,6 @@ Below is the system block diagram for the case of AoD tag asset works in SoC mod
   <b>Figure 1-2 AoD SoC mode block diagram</b>
 </div>  
 </br>
-
 
 <div align="center">
   <img src="image/aod_soc_mode_block_diagram2.png">  
@@ -140,9 +141,6 @@ The following devices were used for all antenna array accuracy measurements in t
 * Tag height from floor: 0.75 m   
 * Testing range: 3.8x3.9m2   
 * Real position of the locators and tags
-<div align="center">
-  <img src="image/3.8x3.9_4locators.png">  
-</div>  
 
 There are total 4 locators and 3 tags in the 3.8x3.9 area, below are the measured position and angle accuracy for the tags.   
 
