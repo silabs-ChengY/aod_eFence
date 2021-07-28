@@ -1,0 +1,1 @@
+所有locator的Orientation都是（0，0，0），所以locator2/4在0度方向上精度比较差

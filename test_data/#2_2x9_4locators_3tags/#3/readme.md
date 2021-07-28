@@ -1,0 +1,1 @@
+didn't draw the curve, calculate the range and variance
