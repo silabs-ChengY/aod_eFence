@@ -463,6 +463,5 @@ For the RAIL Utility, AoX component, please configure the Number of AoX Antenna 
 
 For the soc mode AoD tag, it will send the IQ sample data to the gateway device via bluetooth connection, and the gateway is responsible for angle calculation.
 
-
-
 # Conclusion
+TBD
