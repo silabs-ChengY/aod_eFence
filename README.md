@@ -24,16 +24,15 @@
   - [4.5. Environment 5 (10 tag, 5 locators, static measurement)](#45-environment-5-10-tag-5-locators-static-measurement)
     - [4.5.1. Real position of the locators and tags.](#451-real-position-of-the-locators-and-tags)
     - [4.5.2. Estimated position by RTL lib](#452-estimated-position-by-rtl-lib)
-- [5. Development](#5-development)
+  - [4.6. Environment 5 (10 tag, 5 locators, static measurement)](#46-environment-5-10-tag-5-locators-static-measurement)
+    - [4.6.1. Real position of the locators and tags.](#461-real-position-of-the-locators-and-tags)
+    - [4.6.2. Estimated position by RTL lib](#462-estimated-position-by-rtl-lib)
+- [5. Development and Code Walk Through](#5-development-and-code-walk-through)
   - [5.1. Create the AoD Beacon project base on soc-empty example](#51-create-the-aod-beacon-project-base-on-soc-empty-example)
   - [5.2. Create NCP mode AoD asset base on ncp example](#52-create-ncp-mode-aod-asset-base-on-ncp-example)
   - [5.3. Build the AoA_Locator project](#53-build-the-aoa_locator-project)
   - [5.4. Build the AoD_Locator project](#54-build-the-aod_locator-project)
   - [5.5. Create the AoD SoC mode Asset project base on soc-empty example](#55-create-the-aod-soc-mode-asset-project-base-on-soc-empty-example)
-  - [5.6. Build the AoD Gateway project](#56-build-the-aod-gateway-project)
-- [How to run?](#how-to-run)
-  - [Run aod_locator host application](#run-aod_locator-host-application)
-  - [Run the aod_gateway host application](#run-the-aod_gateway-host-application)
 - [Conclusion](#conclusion)
 
 </details>
@@ -60,13 +59,14 @@ Running the demo requires the following devices:
 
 * **soc_aod_beacon** should be built in Studio, and flashed to the Antenna array board. This will act as a beacon (CTE transmitter)   
 * **ncp_aod_asset** should be built in Studio and flashed to a Thunderboard BG22. This will act as the asset, that receives the CTE and wants to determine its position.   
-* **aod_compass** should be built outside of studio using MSYS2 mingw 64-bit, the same way as the aoa_compass is built, see documentation in QSG175. The main difference between aoa_compass and aod_compass is, that aod_compass has to connect to the Thunderboard instead of the antenna array board. This time, the angles/position is calculated on the Thunderboard side. So now the Thunderboard acts like an ncp target, and it connects to the PC, which then does the calculation.   
+* **soc_aod_asset** should be built in Studio and flashed to Tunderboard BG22, it is the SoC mode aod asset that do the I/Q sample and transfer it to the gateway via bluetooth connection. Due to the limited resource, it cannot do any angle estimation or position calculation locally.
 * **aod_locator** is the host sample app running on the host demonstrates the CTE Receiver feature and the usage of the angle estimation feature of the RTL library.   
+* **aod_gateway** is similar as **aod_locator** but it collects the I/Q sample from the SoC mode aod asset tag via bluetooth connection. And calculate the angle and position accordingly.
 
 ## 3.2. Demo Setup
 There are two kind of system structure for the multi-transmitter AoD demo. Customer can choose anyone of them depends on their own system design.   
 In the first case, the AoD tag asset will work in NCP mode for I/Q sample, the host application **aod_locator** runs on the host MCU or PC will receive the I/Q sample result from the tag via BGAPI interface, and calculate the angle and position according to the I/Q data.   
-In the second case, the AoD tag asset work in SoC mode for I/Q sample, after finishing the sampling it will transmit the I/Q sample data to the gateway via Bluetooth connection. After receiving the I/Q sample from each AoD tag, the gateway runs **aod_gateway** application will calculate the angle and position.   
+In the second case, the AoD tag asset work in SoC mode for I/Q sample, after finishing the sampling it will transmit the I/Q sample data to the aod gateway via Bluetooth connection. After receiving the I/Q sample from each AoD tag, the gateway runs **aod_gateway** application will calculate the angle and position.   
 
 For getting start with these two kind of multi-transmitter AoD demos, please follow the steps below.    
 
@@ -75,8 +75,8 @@ For getting start with these two kind of multi-transmitter AoD demos, please fol
 * Please build and flash the **soc_aod_beacon.sls** project to your antenna array boards. You can also find the prebuilt image now for your convenience.     
 * Please build and flash the **ncp_aod_asset.sls** project to your Thunderboard. You can also find the prebuilt image now for your convenience.    
 * Please copy the attached **aod_locator** project into the following folder:   
-    C:\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.1\app\bluetooth\example_host   
-* Start MSYS2 MinGW 64-bit, browse to the **aod_locator** folder, and build the project simply by running make (there will be some warnings, neglect them)   
+    C:\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.x\app\bluetooth\example_host   
+* Start MSYS2 MinGW 64-bit, navigate to the **aod_locator** folder, and build the project simply by running ```make ANGLE=1``` (there will be some warnings, neglect them)   
 * Navigate to the config folder, and change the multilocator_config.json file according to your setup (change the addresses, position and orientation of your antenna array boards)   
 * Navigate to the exe folder, and start the project like this (change the COM port to the one used by the Thunderboard BG22):   
     ./aod_locator.exe -u COM49 -c ../config/multilocator_config.json   
@@ -93,8 +93,8 @@ Below is the system block diagram for the case of AoD tag asset works in NCP mod
 * Build the **soc_aod_beacon** project and flash the image to the antenna array boards. Please make sure that a bootloader is also flashed before.   
 * Build the **soc_aod_asset** project and flash the image to the Thunderboard BG22.   
 * Flash **NCP - Empty Demo** to a BG22 radio board which acts as the gateway combine with the Raspberry Pi or your PC runs the **aod_gateway** host application.   
-* Copy the **aod_gateway** project to the folder ```C:\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.1\app\bluetooth\example_host```   
-* Open MSYS2 MinGW 64 bit, browse to the **aod_gateway** folder and run 'make'   
+* Copy the **aod_gateway** project to the folder ```C:\SiliconLabs\SimplicityStudio\v5\developer\sdks\gecko_sdk_suite\v3.x\app\bluetooth\example_host```   
+* Open MSYS2 MinGW 64 bit, browse to the **aod_gateway** folder and run ```make ANGLE=1```   
 * Make sure mqtt broker is running   
 * start the **aod_gateway** app like this:   
     ```./exe/aod_gateway.exe -c xxx.jason -u COM8```   
@@ -103,10 +103,11 @@ Below is the system block diagram for the case of AoD tag asset works in NCP mod
 <div align="center">
   <img src="image/mqtt_explorer.png">  
 </div>   
+</br>
 
-* Execute the python script **aod_gui**, it will subscribe the MQTT topic for receiving the position and angle data of each tag, and show the tag in GUI.
-  ```python3 app.py -c ../aod_gateway/config/xxx.json```
-    Note: The multilocator configuration file should be exactly the same for aod_gateway program.
+* Execute the python script **aod_gui**, it will subscribe the MQTT topic for receiving the position and angle data of each tag, and show the tag in GUI.   
+  ```python3 app.py -c ../aod_gateway/config/multilocator_config.json```
+    Note: The multilocator configuration file should be exactly the same for aod_gateway program.   
 
 Below is the system block diagram for the case of AoD tag asset works in SoC mode.   
 
@@ -140,7 +141,6 @@ The following devices were used for all antenna array accuracy measurements in t
 * Locator height from floor: 0.0 m    
 * Tag height from floor: 0.75 m   
 * Testing range: 3.8x3.9m2   
-* Real position of the locators and tags
 
 There are total 4 locators and 3 tags in the 3.8x3.9 area, below are the measured position and angle accuracy for the tags.   
 
@@ -154,6 +154,7 @@ There are total 4 locators and 3 tags in the 3.8x3.9 area, below are the measure
 <div align="center">
   <img src="image/3.8x3.9_4locators.png">  
 </div>  
+</br>  
 
 |Tag ID | X | Y | Z |
 |-|-|-|-|
@@ -163,20 +164,10 @@ There are total 4 locators and 3 tags in the 3.8x3.9 area, below are the measure
 
 ### 4.1.2. Estimated position by RTL lib 
 Below is the estimated position of these three tags. We collected all of the position and angle data for each tag, the curve below reflects the X/Y/Z axis value for each tag in 5mins.   
-**ble-pd-60A423C96825**
 <div align="center">
-  <img src="image/3.8x3.9_4locators_3tags_ble-pd-60A423C96825.png">  
+  <img src="image/3.8x3.9_4locators_3tags_all.png">  
 </div> 
-
-**ble-pd-60A423C96746**
-<div align="center">
-  <img src="image/3.8x3.9_4locators_3tags_ble-pd-60A423C96746.png">  
-</div> 
-
-**ble-pd-60A423C96B3C**
-<div align="center">
-  <img src="image/3.8x3.9_4locators_3tags_ble-pd-60A423C96B3C.png">  
-</div> 
+</br>  
 
 ## 4.2. Environment 2 (9 tag, 4 locators, static measurement)
 * Location: Office environment, open space    
@@ -194,6 +185,7 @@ Below is the estimated position of these three tags. We collected all of the pos
 <div align="center">
   <img src="image/3.8x3.9_4locators.png">  
 </div>  
+</br>  
 
 
 |Tag ID | X | Y | Z |
@@ -213,65 +205,25 @@ Below is the estimated position shown in GUI, and we can monitor the value with 
 <div align="center">
   <img src="image/3.8x3.9_9tags.png">  
 </div>  
+</br>  
 
 <div align="center">
   <img src="image/3.8x3.9_9tags_position.png">  
 </div>  
+</br>  
 
 Also we collected all of the position and angle data for each tag, the curve below reflects the X/Y/Z axis value for each tag in 5mins.   
 
-**ble-pd-60A423C96B13**
 <div align="center">
-  <img src="image/3.8x3.9_4locators_ble-pd-60A423C96B13.png">  
+  <img src="image/3.8x3.9_4locators_9tags_all.png">  
 </div> 
-
-**ble-pd-60A423C96896**
-<div align="center">
-  <img src="image/3.8x3.9_4locators_ble-pd-60A423C96896.png">  
-</div> 
-
-**ble-pd-60A423C96AB5**
-<div align="center">
-  <img src="image/3.8x3.9_4locators_ble-pd-60A423C96AB5.png">  
-</div> 
-
-**ble-pd-60A423C96721**
-<div align="center">
-  <img src="image/3.8x3.9_4locators_ble-pd-60A423C96721.png">  
-</div> 
-
-**ble-pd-60A423C96B3C**
-<div align="center">
-  <img src="image/3.8x3.9_4locators_ble-pd-60A423C96B3C.png">  
-</div> 
-
-**ble-pd-60A423C96825**
-<div align="center">
-  <img src="image/3.8x3.9_4locators_ble-pd-60A423C96825.png">  
-</div> 
-
-**ble-pd-60A423C968C6**
-<div align="center">
-  <img src="image/3.8x3.9_4locators_ble-pd-60A423C968C6.png">  
-</div> 
-
-**ble-pd-60A423C96FC6**
-<div align="center">
-  <img src="image/3.8x3.9_4locators_ble-pd-60A423C96FC6.png">  
-</div> 
-
-**ble-pd-60A423C96746**
-<div align="center">
-  <img src="image/3.8x3.9_4locators_ble-pd-60A423C96746.png">  
-</div> 
-
+</br>  
 
 ## 4.3. Environment 3 (3 tag, 4 locators, static measurement)
 * Location: Office environment, open space    
 * Locator height from floor: 0.0 m   
 * Tag height from floor: 0.75 m   
 * Testing range: 2x9m2   
-* Real position of the locators and tags   
 
 ### 4.3.1. Real position of the locators and tags.
 |Locator ID | X | Y | Z | Orientation
@@ -283,6 +235,7 @@ Also we collected all of the position and angle data for each tag, the curve bel
 <div align="center">
   <img src="image/2x9_4locators.png">  
 </div>  
+</br>  
 
 |Tag ID | X | Y | Z |
 |-|-|-|-|
@@ -306,13 +259,13 @@ Below is the estimated position of these three tags. We collected all of the pos
 <div align="center">
   <img src="image/2x9_4locators_3tags_ble-pd-60A423C96B3C.png">  
 </div> 
+</br>  
 
 ## 4.4. Environment 4 (9 tag, 4 locators, static measurement)
 * Location: Office environment, open space    
 * Locator height from floor: 0.0 m   
 * Tag height from floor: 0.75 m   
 * Testing range: 2x9m2   
-* Real position of the locators and tags   
 
 ### 4.4.1. Real position of the locators and tags.
 |Locator ID | X | Y | Z | Orientation
@@ -324,6 +277,7 @@ Below is the estimated position of these three tags. We collected all of the pos
 <div align="center">
   <img src="image/2x9_4locators.png">  
 </div>  
+</br>  
 
 |Tag ID | X | Y | Z |
 |-|-|-|-|
@@ -337,13 +291,13 @@ Below is the estimated position of these three tags. We collected all of the pos
 <div align="center">
   <img src="image/2x9_9tags_position.png">  
 </div> 
+</br>  
 
 ## 4.5. Environment 5 (10 tag, 5 locators, static measurement)
 * Location: Office environment, open space    
 * Locator height from floor: 0.0 m   
 * Tag height from floor: 0.75 m   
 * Testing range: 2x10m2   
-* Real position of the locators and tags   
 
 ### 4.5.1. Real position of the locators and tags.
 |Locator ID | X | Y | Z | Orientation
@@ -357,6 +311,7 @@ Below is the estimated position of these three tags. We collected all of the pos
 <div align="center">
   <img src="image/eFence_layout_2x10_5locators.png">  
 </div>  
+</br>  
 
 |Tag ID | X | Y | Z |
 |-|-|-|-|
@@ -377,12 +332,68 @@ Below is the estimated position of these ten tags. We collected all of the posit
 <div align="center">
   <img src="image/2x10_10tags_position_3D.png">  
 </div> 
+</br>  
 
 <div align="center">
   <img src="image/2x10_10tags_position_data.png">  
-</div> 
+</div>
+</br>   
 
-# 5. Development
+
+## 4.6. Environment 5 (10 tag, 5 locators, static measurement)
+* Location: Outdoor environment, sharing bicycle parking area.
+* Locator height from floor: 0.0 m   
+* Tag height from floor: 0.75 m   
+* Testing range: 2x10m2   
+* Location estimation mode, Two-dimensional high accuracy mode 
+
+Below is the picture of the sharing bicycle parking area, there are around 30 sharing bicycle in the 2x10m area.
+<div align="center">
+  <img src="image/parking_area.png">  
+</div>  
+</br>  
+
+And we attached all of the tags on the locker of the sharing bicycle during the test as below.
+<div align="center">
+  <img src="image/tag_on_sharing_bicycle.png">  
+</div>  
+</br>  
+
+### 4.6.1. Real position of the locators and tags.
+|Locator ID | X | Y | Z | Orientation
+|-|-|-|-|-|
+|#1 ble-pd-588E81A54222 | 2.00 | 10.00 | 0.00 | (0, 0, 90) |
+|#2 ble-pd-588E8166AF43 | 0.00 | 2.50 | 0.00 | (0, 0, 180) |
+|#3 ble-pd-84FD27EEE4FF | 2.00 | 0.00 | 0.00 | (0, 0, 270) |
+|#4 ble-pd-588E81A5421C | 0.00 | 7.50 | 0.00 | (0, 0, 180) |
+|#5 ble-pd-588E8166AFD7 | 2.00 | 5.00 | 0.00 | (0, 0, 0) |
+
+<div align="center">
+  <img src="image/eFence_layout_2x10_5locators.png">  
+</div>  
+</br>  
+
+|Tag ID | X | Y | Z |
+|-|-|-|-|
+|ble-pd-60A423C968C6 | 0.70 | 8.60 | 0.75 |
+|ble-pd-60A423C96896 | 0.70 | 7.80 | 0.75 |
+|ble-pd-60A423C96B13 | 0.70 | 7.00 | 0.75 |
+|ble-pd-60A423C96AB5 | 0.70 | 6.20 | 0.75 |
+|ble-pd-60A423C96721 | 0.70 | 5.40 | 0.75 |
+|ble-pd-60A423C96B3C | 0.70 | 4.60 | 0.75 |
+|ble-pd-60A423C96746 | 0.70 | 3.80 | 0.75 |
+|ble-pd-60A423C9689C | 0.70 | 3.00 | 0.75 |
+|ble-pd-60A423C96825 | 0.70 | 2.20 | 0.75 |
+|ble-pd-60A423C96FC6 | 0.70 | 1.40 | 0.75 |
+
+### 4.6.2. Estimated position by RTL lib 
+Below is the estimated position of these ten tags. We collected all of the position and angle data for each tag, the curve for each tag below reflects the X/Y/Z axis value for each tag in 5mins.   
+<div align="center">
+  <img src="image/2x10_10tags_position_2D_outdoor.png">  
+</div> 
+</br>  
+
+# 5. Development and Code Walk Through
 The section below guide you how to implement the AoD projects with SiliconLabs Bluetooth SDK as well as the example projects come with the SDK.   
 ## 5.1. Create the AoD Beacon project base on soc-empty example
 Create a soc-empty project, and then install the components below.    
@@ -452,16 +463,6 @@ For the RAIL Utility, AoX component, please configure the Number of AoX Antenna 
 
 For the soc mode AoD tag, it will send the IQ sample data to the gateway device via bluetooth connection, and the gateway is responsible for angle calculation.
 
-## 5.6. Build the AoD Gateway project
-Buidl the project with the command below.
-```make ANAGLE=1```
 
-# How to run?
-## Run aod_locator host application
-Configure your locator configuration file, and then execute the command below. "/dev/cu.usbmodem0004401912961" is the COM port of your asset tag working on NCP mode.
-./exe/aod_locator -c config/singlelocator_config.json -u /dev/cu.usbmodem0004401912961
-
-## Run the aod_gateway host application
-./exe/aod_gateway -u /dev/cu.usbmodem0004401725861
 
 # Conclusion
