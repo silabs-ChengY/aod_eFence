@@ -49,8 +49,8 @@ This project will show you how to build a AoD application with Silicon Labs Blue
 
 # 2. Prerequisites
 Running the demo requires the following devices:   
-* Thunderboard BG22 (SLTB010A)
-* BRD4185A antenna array board with a WSTK x 3
+* Thunderboard BG22 (SLTB010A) x 10
+* BRD4185A antenna array board with a WSTK x 5
 * A PC running Simplicity Studio 5 with Gecko SDK Suite v3.2 or later
 * A Raspberry Pi
 
