@@ -384,7 +384,7 @@ Below is the estimated position of these ten tags. We collected all of the posit
 
 Below is the picture of the sharing bicycle parking area, there is only 1 bicycle in the 2x10m area.
 <div align="center">
-  <img src="image/parking_area_1_bicycle.jpg">  
+  <img src="image/parking_area_1_bicycle.JPG">  
 </div>  
 </br>  
 
@@ -430,7 +430,7 @@ Below is the estimated position of the only 1 tag. We collected all of the posit
 
 Below is the picture of the sharing bicycle parking area, there are total 5 bicycles in the 2x10m area.
 <div align="center">
-  <img src="image/parking_area_5_bicycle.jpg">  
+  <img src="image/parking_area_5_bicycle.JPG">  
 </div>  
 </br>  
 
@@ -477,7 +477,7 @@ Below is the estimated position of the 5 tag. We collected all of the position a
 
 Below is the picture of the sharing bicycle parking area, there are total 10 sharing bicycle in the 2x10m area.
 <div align="center">
-  <img src="image/parking_area_10_bicycle.jpg">  
+  <img src="image/parking_area_10_bicycle.JPG">  
 </div>  
 </br>  
 
