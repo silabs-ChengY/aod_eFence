@@ -62,7 +62,11 @@ Beginning with this Bluetooth SDK 3.1.0.0 GA release, the Bluetooth stack suppor
 SiliconLabs has the [UG103.18: Bluetooth® Direction Finding
 Fundamentals](https://www.silabs.com/documents/public/user-guides/ug103-18-bluetooth-direction-finding-fundamentals.pdf) to explain the basic of the AoA and AoD technology, and 
 has [AN1296: Application Development with Silicon Labs’ RTL Library](https://www.silabs.com/documents/public/application-notes/an1296-application-development-with-rtl-library.pdf) and [AN1297: Custom Direction-Finding Solutions using the Silicon Labs Bluetooth Stack](https://www.silabs.com/documents/public/application-notes/an1297-custom-direction-finding-solutions-silicon-labs-bluetooth.pdf) to explain how develop the direction finding (DF) applications using the Silicon Labs Bluetooth LE stack and the Real Time Locating Library (RTL lib).   
+
 Please note that all of these three documentations are the fundament to understand the basic of Bluetooth Direction Finding as well as the Silicon Labs solution for it. It's supposed that you've read them.   
+
+We got some proposal to create a reference design for the AoD solution. Some of our customer are very interested in the AoD solution, and the initial idea is that we can use the AoD solution for sharing bicycle parking management.
+
 The Bluetooth SDK doesn't come with AoD example application, this article will show you how to build a AoD application with Silicon Labs Bluetooth LE stack and the RTL Lib. This documentation walks through the steps to help anyone get stared with AoD solution.   
 
 # 2. Prerequisites
@@ -672,23 +676,6 @@ Below is the estimated position of these ten tags. We collected all of the posit
   <img src="image/2x10_5locators_10tag_3tripods_outdoor_position.png">  
 </div> 
 </br>  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
