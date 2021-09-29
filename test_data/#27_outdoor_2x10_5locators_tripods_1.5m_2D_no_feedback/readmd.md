@@ -1,0 +1,1 @@
+All of the locators are installed on the tripods which are 1.5m height.

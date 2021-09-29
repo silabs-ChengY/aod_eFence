@@ -6,46 +6,64 @@
 - [3. Demos and Examples](#3-demos-and-examples)
   - [3.1. Sample Applications](#31-sample-applications)
   - [3.2. Demo Setup](#32-demo-setup)
-    - [3.2.1. NCP mode AoD asset](#321-ncp-mode-aod-asset)
-    - [3.2.2. SoC mode AoD asset](#322-soc-mode-aod-asset)
+    - [3.2.1. NCP mode AoD tag asset](#321-ncp-mode-aod-tag-asset)
+    - [3.2.2. SoC mode AoD tag asset](#322-soc-mode-aod-tag-asset)
 - [4. Antenna Array Accuracy](#4-antenna-array-accuracy)
-  - [4.1. Environment 1 (3 tag, 4 locators, static measurement)](#41-environment-1-3-tag-4-locators-static-measurement)
+  - [4.1. Environment 1 (4 locators, 3 tag, static measurement)](#41-environment-1-4-locators-3-tag-static-measurement)
     - [4.1.1. Real position of the locators and tags.](#411-real-position-of-the-locators-and-tags)
     - [4.1.2. Estimated position by RTL lib](#412-estimated-position-by-rtl-lib)
-  - [4.2. Environment 2 (9 tag, 4 locators, static measurement)](#42-environment-2-9-tag-4-locators-static-measurement)
+  - [4.2. Environment 2 (4 locators, 9 tag, static measurement)](#42-environment-2-4-locators-9-tag-static-measurement)
     - [4.2.1. Real position of the locators and tags.](#421-real-position-of-the-locators-and-tags)
     - [4.2.2. Estimated position by RTL lib](#422-estimated-position-by-rtl-lib)
-  - [4.3. Environment 3 (3 tag, 4 locators, static measurement)](#43-environment-3-3-tag-4-locators-static-measurement)
+  - [4.3. Environment 3 (4 locators, 3 tag, static measurement)](#43-environment-3-4-locators-3-tag-static-measurement)
     - [4.3.1. Real position of the locators and tags.](#431-real-position-of-the-locators-and-tags)
     - [4.3.2. Estimated position by RTL lib](#432-estimated-position-by-rtl-lib)
-  - [4.4. Environment 4 (9 tag, 4 locators, static measurement)](#44-environment-4-9-tag-4-locators-static-measurement)
+  - [4.4. Environment 4 (4 locators, 9 tag, static measurement)](#44-environment-4-4-locators-9-tag-static-measurement)
     - [4.4.1. Real position of the locators and tags.](#441-real-position-of-the-locators-and-tags)
     - [4.4.2. Estimated position by RTL lib](#442-estimated-position-by-rtl-lib)
-  - [4.5. Environment 5 (10 tag, 5 locators, static measurement)](#45-environment-5-10-tag-5-locators-static-measurement)
+  - [4.5. Environment 5 (5 locators, 10 tag, static measurement)](#45-environment-5-5-locators-10-tag-static-measurement)
     - [4.5.1. Real position of the locators and tags.](#451-real-position-of-the-locators-and-tags)
     - [4.5.2. Estimated position by RTL lib](#452-estimated-position-by-rtl-lib)
-  - [4.6. Environment 5 (10 tag, 5 locators, static measurement)](#46-environment-5-10-tag-5-locators-static-measurement)
+  - [4.6. Environment 5 (5 locators, 1 tag, static measurement)](#46-environment-5-5-locators-1-tag-static-measurement)
     - [4.6.1. Real position of the locators and tags.](#461-real-position-of-the-locators-and-tags)
     - [4.6.2. Estimated position by RTL lib](#462-estimated-position-by-rtl-lib)
+  - [4.7. Environment 5 (5 locators, 5 tag, static measurement)](#47-environment-5-5-locators-5-tag-static-measurement)
+    - [4.7.1. Real position of the locators and tags.](#471-real-position-of-the-locators-and-tags)
+    - [4.7.2. Estimated position by RTL lib](#472-estimated-position-by-rtl-lib)
+  - [4.8. Environment 5 (5 locators, 10 tag, static measurement)](#48-environment-5-5-locators-10-tag-static-measurement)
+    - [4.8.1. Real position of the locators and tags.](#481-real-position-of-the-locators-and-tags)
+    - [4.8.2. Estimated position by RTL lib](#482-estimated-position-by-rtl-lib)
+  - [4.9. Environment 5 (5 locators, 10 tag, static measurement)](#49-environment-5-5-locators-10-tag-static-measurement)
+    - [4.9.1. Real position of the locators and tags.](#491-real-position-of-the-locators-and-tags)
+    - [4.9.2. Estimated position by RTL lib](#492-estimated-position-by-rtl-lib)
+  - [4.10. Environment 5 (5 locators, 10 tag, static measurement)](#410-environment-5-5-locators-10-tag-static-measurement)
+    - [4.10.1. Real position of the locators and tags.](#4101-real-position-of-the-locators-and-tags)
+    - [4.10.2. Estimated position by RTL lib](#4102-estimated-position-by-rtl-lib)
+  - [4.11. Environment 5 (5 locators, 10 tags, static measurement)](#411-environment-5-5-locators-10-tags-static-measurement)
+    - [4.11.1. Real position of the locators and tags.](#4111-real-position-of-the-locators-and-tags)
+    - [4.11.2. Estimated position by RTL lib](#4112-estimated-position-by-rtl-lib)
 - [5. Development and Code Walk Through](#5-development-and-code-walk-through)
   - [5.1. Create the AoD Beacon project base on soc-empty example](#51-create-the-aod-beacon-project-base-on-soc-empty-example)
   - [5.2. Create NCP mode AoD asset base on ncp example](#52-create-ncp-mode-aod-asset-base-on-ncp-example)
   - [5.3. Build the AoA_Locator project](#53-build-the-aoa_locator-project)
   - [5.4. Build the AoD_Locator project](#54-build-the-aod_locator-project)
   - [5.5. Create the AoD SoC mode Asset project base on soc-empty example](#55-create-the-aod-soc-mode-asset-project-base-on-soc-empty-example)
-- [Conclusion](#conclusion)
+- [6. Conclusion](#6-conclusion)
 
 </details>
 
 ***
 
 # 1. Introduction
-Bluetooth Angle of Arrival (AoA) and Angle of Departure (AoD) are new technologies that establish a standardized framework for indoor positioning. With these technologies, the fundamental problem of positioning comes down to solving the arrival and departure angles of radio frequency signals.   
+Bluetooth Angle of Arrival (AoA) and Angle of Departure (AoD) are new technologies that establish a standardized framework for indoor positioning. With these technologies, the fundamental problem of positioning comes down to solving the arrival and departure angles of radio frequency signals.    
+
+Beginning with this Bluetooth SDK 3.1.0.0 GA release, the Bluetooth stack supports Bluetooth 5.1 AoA and AoD features. The SDK provides some example applications for evaluating the AoA functionality, and the AoD is also supported at the Bluetooth stack level.   
+
 SiliconLabs has the [UG103.18: Bluetooth® Direction Finding
 Fundamentals](https://www.silabs.com/documents/public/user-guides/ug103-18-bluetooth-direction-finding-fundamentals.pdf) to explain the basic of the AoA and AoD technology, and 
-has [AN1296: Application Development with Silicon Labs’ RTL Library] and [AN1297: Custom Direction-Finding Solutions using the Silicon Labs Bluetooth Stack] to explain how develop the direction finding (DF) applications using the Silicon Labs Bluetooth LE stack and the Real Time Locating Library (RTL lib).   
+has [AN1296: Application Development with Silicon Labs’ RTL Library](https://www.silabs.com/documents/public/application-notes/an1296-application-development-with-rtl-library.pdf) and [AN1297: Custom Direction-Finding Solutions using the Silicon Labs Bluetooth Stack](https://www.silabs.com/documents/public/application-notes/an1297-custom-direction-finding-solutions-silicon-labs-bluetooth.pdf) to explain how develop the direction finding (DF) applications using the Silicon Labs Bluetooth LE stack and the Real Time Locating Library (RTL lib).   
 Please note that all of these three documentations are the fundament to understand the basic of Bluetooth Direction Finding as well as the Silicon Labs solution for it. It's supposed that you've read them.   
-This project will show you how to build a AoD application with Silicon Labs Bluetooth LE stack and the RTL Lib. This documentation walks through the steps to help anyone get stared with AoD solution.   
+The Bluetooth SDK doesn't come with AoD example application, this article will show you how to build a AoD application with Silicon Labs Bluetooth LE stack and the RTL Lib. This documentation walks through the steps to help anyone get stared with AoD solution.   
 
 # 2. Prerequisites
 Running the demo requires the following devices:   
@@ -62,6 +80,7 @@ Running the demo requires the following devices:
 * **soc_aod_asset** should be built in Studio and flashed to Tunderboard BG22, it is the SoC mode aod asset that do the I/Q sample and transfer it to the gateway via bluetooth connection. Due to the limited resource, it cannot do any angle estimation or position calculation locally.
 * **aod_locator** is the host sample app running on the host demonstrates the CTE Receiver feature and the usage of the angle estimation feature of the RTL library.   
 * **aod_gateway** is similar as **aod_locator** but it collects the I/Q sample from the SoC mode aod asset tag via bluetooth connection. And calculate the angle and position accordingly.
+* **aod_gui** is a python based script that can subscribe the MQTT topic published by aod_gateway that contains the position information of the tags, and show the position information of the tag with GUI.
 
 ## 3.2. Demo Setup
 There are two kind of system structure for the multi-transmitter AoD demo. Customer can choose anyone of them depends on their own system design.   
@@ -70,7 +89,7 @@ In the second case, the AoD tag asset work in SoC mode for I/Q sample, after fin
 
 For getting start with these two kind of multi-transmitter AoD demos, please follow the steps below.    
 
-### 3.2.1. NCP mode AoD asset
+### 3.2.1. NCP mode AoD tag asset
 * Please flash a bootloader to each of your boards     
 * Please build and flash the **soc_aod_beacon.sls** project to your antenna array boards. You can also find the prebuilt image now for your convenience.     
 * Please build and flash the **ncp_aod_asset.sls** project to your Thunderboard. You can also find the prebuilt image now for your convenience.    
@@ -89,7 +108,7 @@ Below is the system block diagram for the case of AoD tag asset works in NCP mod
 </div>  
 </br>
 
-### 3.2.2. SoC mode AoD asset
+### 3.2.2. SoC mode AoD tag asset
 * Build the **soc_aod_beacon** project and flash the image to the antenna array boards. Please make sure that a bootloader is also flashed before.   
 * Build the **soc_aod_asset** project and flash the image to the Thunderboard BG22.   
 * Flash **NCP - Empty Demo** to a BG22 radio board which acts as the gateway combine with the Raspberry Pi or your PC runs the **aod_gateway** host application.   
@@ -136,13 +155,13 @@ The following devices were used for all antenna array accuracy measurements in t
 • Locator: BRD4185A Rev A01   
 • Tag: BRD4184A Rev A02   
 
-## 4.1. Environment 1 (3 tag, 4 locators, static measurement)
+## 4.1. Environment 1 (4 locators, 3 tag, static measurement)
 * Location: Office environment, open space    
 * Locator height from floor: 0.0 m    
 * Tag height from floor: 0.75 m   
 * Testing range: 3.8x3.9m2   
 
-There are total 4 locators and 3 tags in the 3.8x3.9 area, below are the measured position and angle accuracy for the tags.   
+There are total 4 locators and 3 tags in the 3.8x3.9 area, all of the locators are on ground with height 0m, and tags have a fixed 0.75m height.   
 
 ### 4.1.1. Real position of the locators and tags.
 |Locator ID | X | Y | Z |
@@ -151,29 +170,31 @@ There are total 4 locators and 3 tags in the 3.8x3.9 area, below are the measure
 |#2 ble-pd-588E8166AF43 | 0.00 | 0.00 | 0.00 |
 |#3 ble-pd-84FD27EEE4FF | 3.80 | 0.00 | 0.00 |
 |#4 ble-pd-588E81A5421C | 0.00 | 3.90 | 0.00 |
-<div align="center">
-  <img src="image/3.8x3.9_4locators.png">  
-</div>  
-</br>  
 
 |Tag ID | X | Y | Z |
 |-|-|-|-|
 |ble-pd-60A423C96825 | 2.00 | 2.90 | 0.75 |
 |ble-pd-60A423C96B3C | 2.00 | 2.10 | 0.75 |
 |ble-pd-60A423C96746 | 2.00 | 1.30 | 0.75 |
+<div align="center">
+  <img src="image/3.8x3.9_4locators.png">  
+</div>  
+</br>  
 
 ### 4.1.2. Estimated position by RTL lib 
 Below is the estimated position of these three tags. We collected all of the position and angle data for each tag, the curve below reflects the X/Y/Z axis value for each tag in 5mins.   
 <div align="center">
-  <img src="image/3.8x3.9_4locators_3tags_all.png">  
+  <img src="image/3.8x3.9_4locators_1tag_indoor_position.png">  
 </div> 
 </br>  
 
-## 4.2. Environment 2 (9 tag, 4 locators, static measurement)
+## 4.2. Environment 2 (4 locators, 9 tag, static measurement)
 * Location: Office environment, open space    
 * Locator height from floor: 0.0 m   
 * Tag height from floor: 0.75 m   
 * Testing range: 3.8x3.9m2   
+
+Similar as test environment 1, we increase the tag number from 3 to 9 for the test.
 
 ### 4.2.1. Real position of the locators and tags.
 |Locator ID | X | Y | Z |
@@ -182,11 +203,6 @@ Below is the estimated position of these three tags. We collected all of the pos
 |#2 ble-pd-588E8166AF43 | 0.00 | 0.00 | 0.00 |
 |#3 ble-pd-84FD27EEE4FF | 3.80 | 0.00 | 0.00 |
 |#4 ble-pd-588E81A5421C | 0.00 | 3.90 | 0.00 |
-<div align="center">
-  <img src="image/3.8x3.9_4locators.png">  
-</div>  
-</br>  
-
 
 |Tag ID | X | Y | Z |
 |-|-|-|-|
@@ -199,6 +215,12 @@ Below is the estimated position of these three tags. We collected all of the pos
 |ble-pd-60A423C968C6 | 2.00 | 1.40 | 0.75 |
 |ble-pd-60A423C96FC6 | 2.00 | 1.10 | 0.75 |
 |ble-pd-60A423C96746 | 2.00 | 0.80 | 0.75 |
+
+<div align="center">
+  <img src="image/3.8x3.9_4locators.png">  
+</div>  
+</br>  
+
 
 ### 4.2.2. Estimated position by RTL lib 
 Below is the estimated position shown in GUI, and we can monitor the value with the MQTT Explorer.   
@@ -219,11 +241,13 @@ Also we collected all of the position and angle data for each tag, the curve bel
 </div> 
 </br>  
 
-## 4.3. Environment 3 (3 tag, 4 locators, static measurement)
+## 4.3. Environment 3 (4 locators, 3 tag, static measurement)
 * Location: Office environment, open space    
 * Locator height from floor: 0.0 m   
 * Tag height from floor: 0.75 m   
 * Testing range: 2x9m2   
+
+Generally, the e-fence for the sharing bicycle is a rectangle, and we did some test with this case.
 
 ### 4.3.1. Real position of the locators and tags.
 |Locator ID | X | Y | Z | Orientation
@@ -232,16 +256,17 @@ Also we collected all of the position and angle data for each tag, the curve bel
 |#2 ble-pd-588E8166AF43 | 0.00 | 3.00 | 0.00 | (0, 0, 0) |
 |#3 ble-pd-84FD27EEE4FF | 2.00 | 0.00 | 0.00 | (0, 0, 0) |
 |#4 ble-pd-588E81A5421C | 0.00 | 6.00 | 0.00 | (0, 0, 0) |
-<div align="center">
-  <img src="image/2x9_4locators.png">  
-</div>  
-</br>  
 
 |Tag ID | X | Y | Z |
 |-|-|-|-|
 |ble-pd-60A423C96825 | 1.40 | 5.30 | 0.75 |
 |ble-pd-60A423C96746 | 1.40 | 4.50 | 0.75 |
 |ble-pd-60A423C96B3C | 1.40 | 3.70 | 0.75 |
+
+<div align="center">
+  <img src="image/2x9_4locators.png">  
+</div>  
+</br>  
 
 ### 4.3.2. Estimated position by RTL lib 
 Below is the estimated position of these three tags. We collected all of the position and angle data for each tag, the curve below reflects the X/Y/Z axis value for each tag in 5mins.   
@@ -261,7 +286,10 @@ Below is the estimated position of these three tags. We collected all of the pos
 </div> 
 </br>  
 
-## 4.4. Environment 4 (9 tag, 4 locators, static measurement)
+
+
+
+## 4.4. Environment 4 (4 locators, 9 tag, static measurement)
 * Location: Office environment, open space    
 * Locator height from floor: 0.0 m   
 * Tag height from floor: 0.75 m   
@@ -274,26 +302,29 @@ Below is the estimated position of these three tags. We collected all of the pos
 |#2 ble-pd-588E8166AF43 | 0.00 | 3.00 | 0.00 | (0, 0, 90) |
 |#3 ble-pd-84FD27EEE4FF | 2.00 | 0.00 | 0.00 | (0, 0, 90) |
 |#4 ble-pd-588E81A5421C | 0.00 | 6.00 | 0.00 | (0, 0, 0) |
-<div align="center">
-  <img src="image/2x9_4locators.png">  
-</div>  
-</br>  
 
 |Tag ID | X | Y | Z |
 |-|-|-|-|
-|ble-pd-60A423C96825 | 1.40 | 5.30 | 0.75 |
-|ble-pd-60A423C96746 | 1.40 | 4.50 | 0.75 |
-|ble-pd-60A423C96B3C | 1.40 | 3.70 | 0.75 |
+|ble-pd-60A423C96B13 | 1.40 | 5.70 | 0.75 
+|ble-pd-60A423C96896 | 1.40 |	5.40 | 0.75 
+|ble-pd-60A423C96AB5 | 1.40 | 5.10 | 0.75 
+|ble-pd-60A423C96721 | 1.40 |	4.80 | 0.75 
+|ble-pd-60A423C96B3C | 1.40 |	4.50 | 0.75 
+|ble-pd-60A423C96825 | 1.40 |	4.20 | 0.75 
+|ble-pd-60A423C968C6 | 1.40 |	3.90 | 0.75 
+|ble-pd-60A423C96FC6 | 1.40 |	3.60 | 0.75 
+|ble-pd-60A423C96746 | 1.40 |	3.30 | 0.75 
 
 ### 4.4.2. Estimated position by RTL lib 
-Below is the estimated position of these three tags. We collected all of the position and angle data for each tag, the curve below reflects the X/Y/Z axis value for each tag in 5mins.   
+Below is the estimated position of these 9 tags. We collected all of the position and angle data for each tag, the curve below reflects the X/Y/Z axis value for each tag in 5mins.   
 
 <div align="center">
-  <img src="image/2x9_9tags_position.png">  
+  <img src="image/2x9_4locators_9tag_indoor_position.png">  
 </div> 
 </br>  
 
-## 4.5. Environment 5 (10 tag, 5 locators, static measurement)
+
+## 4.5. Environment 5 (5 locators, 10 tag, static measurement)
 * Location: Office environment, open space    
 * Locator height from floor: 0.0 m   
 * Tag height from floor: 0.75 m   
@@ -308,11 +339,6 @@ Below is the estimated position of these three tags. We collected all of the pos
 |#4 ble-pd-588E81A5421C | 0.00 | 7.50 | 0.00 | (0, 0, 180) |
 |#5 ble-pd-588E8166AFD7 | 2.00 | 5.00 | 0.00 | (0, 0, 0) |
 
-<div align="center">
-  <img src="image/eFence_layout_2x10_5locators.png">  
-</div>  
-</br>  
-
 |Tag ID | X | Y | Z |
 |-|-|-|-|
 |ble-pd-60A423C96896 | 1.40 | 8.60 | 0.75 |
@@ -326,34 +352,39 @@ Below is the estimated position of these three tags. We collected all of the pos
 |ble-pd-60A423C96746 | 1.40 | 2.20 | 0.75 |
 |ble-pd-60A423C96FC6 | 1.40 | 1.40 | 0.75 |
 
+<div align="center">
+  <img src="image/eFence_layout_2x10_5locators.png">  
+</div>  
+</br>  
+
 ### 4.5.2. Estimated position by RTL lib 
 Below is the estimated position of these ten tags. We collected all of the position and angle data for each tag, the curve for each tag below reflects the X/Y/Z axis value for each tag in 5mins.   
 
 <div align="center">
-  <img src="image/2x10_10tags_position_3D.png">  
-</div> 
-</br>  
-
-<div align="center">
-  <img src="image/2x10_10tags_position_data.png">  
+  <img src="image/2x10_5locators_10tag_indoor_position.png">  
 </div>
 </br>   
 
 
-## 4.6. Environment 5 (10 tag, 5 locators, static measurement)
+
+
+
+
+
+## 4.6. Environment 5 (5 locators, 1 tag, static measurement)
 * Location: Outdoor environment, sharing bicycle parking area.
 * Locator height from floor: 0.0 m   
-* Tag height from floor: 0.75 m   
-* Testing range: 2x10m2   
+* Tag height from floor: 0.6 m   
+* Testing environment: 2x10m2 area with only 1 bicycle has a tag mounted.
 * Location estimation mode, Two-dimensional high accuracy mode 
 
-Below is the picture of the sharing bicycle parking area, there are around 30 sharing bicycle in the 2x10m area.
+Below is the picture of the sharing bicycle parking area, there is only 1 bicycle in the 2x10m area.
 <div align="center">
-  <img src="image/parking_area.png">  
+  <img src="image/parking_area_1_bicycle.jpg">  
 </div>  
 </br>  
 
-And we attached all of the tags on the locker of the sharing bicycle during the test as below.
+And we attached the tag on the locker of the sharing bicycle during the test as below.
 <div align="center">
   <img src="image/tag_on_sharing_bicycle.png">  
 </div>  
@@ -368,30 +399,301 @@ And we attached all of the tags on the locker of the sharing bicycle during the 
 |#4 ble-pd-588E81A5421C | 0.00 | 7.50 | 0.00 | (0, 0, 180) |
 |#5 ble-pd-588E8166AFD7 | 2.00 | 5.00 | 0.00 | (0, 0, 0) |
 
+|Tag ID | X | Y | Z |
+|-|-|-|-|
+|ble-pd-60A423C96721 | 1.00 | 5.40 | 0.6 |
+
 <div align="center">
-  <img src="image/eFence_layout_2x10_5locators.png">  
+  <img src="image/eFence_layout_2x10_5locators_1tag_outdoor.png">  
+</div>  
+</br>  
+
+
+### 4.6.2. Estimated position by RTL lib 
+Below is the estimated position of the only 1 tag. We collected all of the position and angle data for each tag, the curve for the tag below reflects the X/Y axis value for it in 5mins.   
+<div align="center">
+  <img src="image/2x10_5locators_1tag_outdoor_position.png">  
+</div> 
+</br>  
+
+
+## 4.7. Environment 5 (5 locators, 5 tag, static measurement)
+* Location: Outdoor environment, sharing bicycle parking area.
+* Locator height from floor: 0.0 m   
+* Tag height from floor: 0.6 m   
+* Testing environment: 2x10m2 area with only 5 bicycles have tag mounted.
+* Location estimation mode, Two-dimensional high accuracy mode 
+
+Below is the picture of the sharing bicycle parking area, there are total 5 bicycles in the 2x10m area.
+<div align="center">
+  <img src="image/parking_area_5_bicycle.jpg">  
+</div>  
+</br>  
+
+And we attached the tag on the locker of the sharing bicycle as what we did before.
+
+### 4.7.1. Real position of the locators and tags.
+|Locator ID | X | Y | Z | Orientation
+|-|-|-|-|-|
+|#1 ble-pd-588E81A54222 | 2.00 | 10.00 | 0.00 | (0, 0, 90) |
+|#2 ble-pd-588E8166AF43 | 0.00 | 2.50 | 0.00 | (0, 0, 180) |
+|#3 ble-pd-84FD27EEE4FF | 2.00 | 0.00 | 0.00 | (0, 0, 270) |
+|#4 ble-pd-588E81A5421C | 0.00 | 7.50 | 0.00 | (0, 0, 180) |
+|#5 ble-pd-588E8166AFD7 | 2.00 | 5.00 | 0.00 | (0, 0, 0) |
+
+|Tag ID | X | Y | Z |
+|-|-|-|-|
+|ble-pd-60A423C96B13 | 1.00 | 7.80 | 0.6 |
+|ble-pd-60A423C96721 | 1.00 | 6.00 | 0.6 |
+|ble-pd-60A423C96746 | 1.00 | 4.20 | 0.6 |
+|ble-pd-60A423C96825 | 1.00 | 2.40 | 0.6 |
+|ble-pd-60A423C968C6 | 1.00 | 0.60 | 0.6 |
+
+<div align="center">
+  <img src="image/eFence_layout_2x10_5locators_5tag_outdoor.png">  
+</div>  
+</br>  
+
+### 4.7.2. Estimated position by RTL lib 
+Below is the estimated position of the 5 tag. We collected all of the position and angle data for each tag, the curve for the tag below reflects the X/Y axis value for it in 5mins.   
+<div align="center">
+  <img src="image/2x10_5locators_5tag_outdoor_position.png">  
+</div> 
+</br>  
+
+
+
+
+## 4.8. Environment 5 (5 locators, 10 tag, static measurement)
+* Location: Outdoor environment, sharing bicycle parking area.
+* Locator height from floor: 0.0 m   
+* Tag height from floor: 0.6 m   
+* Testing environment: 2x10m2 area with only 10 bicycles have tag mounted.
+* Location estimation mode, Two-dimensional high accuracy mode 
+
+Below is the picture of the sharing bicycle parking area, there are total 10 sharing bicycle in the 2x10m area.
+<div align="center">
+  <img src="image/parking_area_10_bicycle.jpg">  
+</div>  
+</br>  
+
+And we attached all of the tags on the locker of the sharing bicycle during the test as what we did before.
+
+### 4.8.1. Real position of the locators and tags.
+|Locator ID | X | Y | Z | Orientation
+|-|-|-|-|-|
+|#1 ble-pd-588E81A54222 | 2.00 | 10.00 | 0.00 | (0, 0, 90) |
+|#2 ble-pd-588E8166AF43 | 0.00 | 2.50 | 0.00 | (0, 0, 180) |
+|#3 ble-pd-84FD27EEE4FF | 2.00 | 0.00 | 0.00 | (0, 0, 270) |
+|#4 ble-pd-588E81A5421C | 0.00 | 7.50 | 0.00 | (0, 0, 180) |
+|#5 ble-pd-588E8166AFD7 | 2.00 | 5.00 | 0.00 | (0, 0, 0) |
+
+|Tag ID | X | Y | Z |
+|-|-|-|-|
+|ble-pd-60A423C968C6 | 1.00 | 8.70 | 0.60 |
+|ble-pd-60A423C96896 | 1.00 | 7.80 | 0.60 |
+|ble-pd-60A423C96B13 | 1.00 | 6.90 | 0.60 |
+|ble-pd-60A423C96AB5 | 1.00 | 6.00 | 0.60 |
+|ble-pd-60A423C96721 | 1.00 | 5.10 | 0.60 |
+|ble-pd-60A423C96B3C | 1.00 | 4.20 | 0.60 |
+|ble-pd-60A423C96746 | 1.00 | 3.30 | 0.60 |
+|ble-pd-60A423C9689C | 1.00 | 2.40 | 0.60 |
+|ble-pd-60A423C96825 | 1.00 | 1.50 | 0.60 |
+|ble-pd-60A423C96FC6 | 1.00 | 0.60 | 0.60 |
+
+<div align="center">
+  <img src="image/eFence_layout_2x10_5locators_10tag_outdoor.png">  
+</div>  
+</br>  
+
+
+### 4.8.2. Estimated position by RTL lib 
+Below is the estimated position of these ten tags. We collected all of the position and angle data for each tag, the curve for each tag below reflects the X/Y/Z axis value for each tag in 5mins.   
+<div align="center">
+  <img src="image/2x10_5locators_10tag_outdoor_position.png">  
+</div> 
+</br>  
+
+
+
+
+
+
+
+
+
+## 4.9. Environment 5 (5 locators, 10 tag, static measurement)
+* Location: Outdoor environment, sharing bicycle parking area.
+* Locator height from floor: 0.0 m   
+* Tag height from floor: 0.6 m   
+* Testing environment: 2x10m2 area with 10 out of 25 bicycles have tag mounted.
+* Location estimation mode, Two-dimensional high accuracy mode 
+
+Below is the picture of the sharing bicycle parking area, there are around 25 sharing bicycle in the 2x10m area.
+<div align="center">
+  <img src="image/parking_area.png">  
+</div>  
+</br>  
+
+And we attached all of the tags on the locker of the sharing bicycle during the test as below.
+<div align="center">
+  <img src="image/tag_on_sharing_bicycle.png">  
+</div>  
+</br>  
+
+### 4.9.1. Real position of the locators and tags.
+|Locator ID | X | Y | Z | Orientation
+|-|-|-|-|-|
+|#1 ble-pd-588E81A54222 | 2.00 | 10.00 | 0.00 | (0, 0, 90) |
+|#2 ble-pd-588E8166AF43 | 0.00 | 2.50 | 0.00 | (0, 0, 180) |
+|#3 ble-pd-84FD27EEE4FF | 2.00 | 0.00 | 0.00 | (0, 0, 270) |
+|#4 ble-pd-588E81A5421C | 0.00 | 7.50 | 0.00 | (0, 0, 180) |
+|#5 ble-pd-588E8166AFD7 | 2.00 | 5.00 | 0.00 | (0, 0, 0) |
+
+<div align="center">
+  <img src="image/eFence_layout_2x10_5locators_10tags_xxobjects.png">  
 </div>  
 </br>  
 
 |Tag ID | X | Y | Z |
 |-|-|-|-|
-|ble-pd-60A423C968C6 | 0.70 | 8.60 | 0.75 |
-|ble-pd-60A423C96896 | 0.70 | 7.80 | 0.75 |
-|ble-pd-60A423C96B13 | 0.70 | 7.00 | 0.75 |
-|ble-pd-60A423C96AB5 | 0.70 | 6.20 | 0.75 |
-|ble-pd-60A423C96721 | 0.70 | 5.40 | 0.75 |
-|ble-pd-60A423C96B3C | 0.70 | 4.60 | 0.75 |
-|ble-pd-60A423C96746 | 0.70 | 3.80 | 0.75 |
-|ble-pd-60A423C9689C | 0.70 | 3.00 | 0.75 |
-|ble-pd-60A423C96825 | 0.70 | 2.20 | 0.75 |
-|ble-pd-60A423C96FC6 | 0.70 | 1.40 | 0.75 |
+|ble-pd-60A423C968C6 | 1.00 | 8.60 | 0.60 |
+|ble-pd-60A423C96896 | 1.00 | 7.80 | 0.60 |
+|ble-pd-60A423C96B13 | 1.00 | 7.00 | 0.60 |
+|ble-pd-60A423C96AB5 | 1.00 | 6.20 | 0.60 |
+|ble-pd-60A423C96721 | 1.00 | 5.40 | 0.60 |
+|ble-pd-60A423C96B3C | 1.00 | 4.60 | 0.60 |
+|ble-pd-60A423C96746 | 1.00 | 3.80 | 0.60 |
+|ble-pd-60A423C9689C | 1.00 | 3.00 | 0.60 |
+|ble-pd-60A423C96825 | 1.00 | 2.20 | 0.60 |
+|ble-pd-60A423C96FC6 | 1.00 | 1.40 | 0.60 |
 
-### 4.6.2. Estimated position by RTL lib 
+### 4.9.2. Estimated position by RTL lib 
 Below is the estimated position of these ten tags. We collected all of the position and angle data for each tag, the curve for each tag below reflects the X/Y/Z axis value for each tag in 5mins.   
 <div align="center">
   <img src="image/2x10_10tags_position_2D_outdoor.png">  
 </div> 
 </br>  
+
+
+## 4.10. Environment 5 (5 locators, 10 tag, static measurement)
+* Location: Outdoor environment, sharing bicycle parking area.
+* Locator height from floor: 1.5 m   
+* Tag height from floor: 0.6 m   
+* Testing environment: 2x10m2 area with 10 out of 25 bicycles have tag mounted.
+* Location estimation mode, Two-dimensional high accuracy mode 
+
+Below is the picture of the sharing bicycle parking area, there are around 25 sharing bicycle in the 2x10m area. And all of the 5 locators are installed on the tripods which are 1.5m height.
+<div align="center">
+  <img src="image/parking_area2.JPG">  
+</div>  
+</br>  
+
+And we attached all of the tags on the locker of the sharing bicycle during the test as what we did before.
+
+### 4.10.1. Real position of the locators and tags.
+|Locator ID | X | Y | Z | Orientation
+|-|-|-|-|-|
+|#1 ble-pd-588E81A54222 | 2.00 | 10.00 | 1.50 | (180, 0, 90) |
+|#2 ble-pd-588E8166AF43 | 0.00 | 2.50 | 1.50 | (180, 0, 180) |
+|#3 ble-pd-84FD27EEE4FF | 2.00 | 0.00 | 1.50 | (180, 0, -90) |
+|#4 ble-pd-588E81A5421C | 0.00 | 7.50 | 1.50 | (180, 0, 180) |
+|#5 ble-pd-588E8166AFD7 | 2.00 | 5.00 | 1.50 | (180, 0, 0) |
+
+|Tag ID | X | Y | Z |
+|-|-|-|-|
+|ble-pd-60A423C968C6 | 1.00 | 8.60 | 0.60 |
+|ble-pd-60A423C96896 | 1.00 | 7.80 | 0.60 |
+|ble-pd-60A423C96B13 | 1.00 | 7.00 | 0.60 |
+|ble-pd-60A423C96AB5 | 1.00 | 6.20 | 0.60 |
+|ble-pd-60A423C96721 | 1.00 | 5.40 | 0.60 |
+|ble-pd-60A423C96B3C | 1.00 | 4.60 | 0.60 |
+|ble-pd-60A423C96746 | 1.00 | 3.80 | 0.60 |
+|ble-pd-60A423C9689C | 1.00 | 3.00 | 0.60 |
+|ble-pd-60A423C96825 | 1.00 | 2.20 | 0.60 |
+|ble-pd-60A423C96FC6 | 1.00 | 1.40 | 0.60 |
+
+<div align="center">
+  <img src="image/eFence_layout_2x10_5locators_5tripods_10tag_outdoor.png">  
+</div>  
+</br>  
+
+
+### 4.10.2. Estimated position by RTL lib 
+Below is the estimated position of these ten tags. We collected all of the position and angle data for each tag, the curve for each tag below reflects the X/Y/Z axis value for each tag in 5mins.   
+<div align="center">
+  <img src="image/2x10_10tags_position_2D_outdoor_5tripods.png">  
+</div> 
+</br>  
+
+
+
+## 4.11. Environment 5 (5 locators, 10 tags, static measurement)
+* Location: Outdoor environment, sharing bicycle parking area.
+* Locator height from floor: 2 locators on ground and 3 on tripods, the height of the tripod is 1.5 m   
+* Tag height from floor: 0.6 m   
+* Testing environment: 2x10m2 area with 10 out of 25 bicycles have tag mounted.
+* Location estimation mode, Two-dimensional high accuracy mode 
+
+There are around 25 sharing bicycle in the 2x10m area. 3 locators are installed on the tripods which are 1.5m height, and the other 2 locators are on the ground.
+And we attached all of the tags on the locker of the sharing bicycle during the test as what we did before.
+
+### 4.11.1. Real position of the locators and tags.
+|Locator ID | X | Y | Z | Orientation
+|-|-|-|-|-|
+|#1 ble-pd-588E81A54222 | 2.00 | 10.00 | 1.50 | (180, 0, 90) |
+|#2 ble-pd-588E8166AF43 | 0.00 | 2.50 | 0.00 | (0, 0, 180) |
+|#3 ble-pd-84FD27EEE4FF | 2.00 | 0.00 | 1.50 | (180, 0, -90) |
+|#4 ble-pd-588E81A5421C | 0.00 | 7.50 | 0.00 | (0, 0, 180) |
+|#5 ble-pd-588E8166AFD7 | 2.00 | 5.00 | 1.50 | (180, 0, 0) |
+
+|Tag ID | X | Y | Z |
+|-|-|-|-|
+|ble-pd-60A423C968C6 | 1.00 | 8.60 | 0.60 |
+|ble-pd-60A423C96896 | 1.00 | 7.80 | 0.60 |
+|ble-pd-60A423C96B13 | 1.00 | 7.00 | 0.60 |
+|ble-pd-60A423C96AB5 | 1.00 | 6.20 | 0.60 |
+|ble-pd-60A423C96721 | 1.00 | 5.40 | 0.60 |
+|ble-pd-60A423C96B3C | 1.00 | 4.60 | 0.60 |
+|ble-pd-60A423C96746 | 1.00 | 3.80 | 0.60 |
+|ble-pd-60A423C9689C | 1.00 | 3.00 | 0.60 |
+|ble-pd-60A423C96825 | 1.00 | 2.20 | 0.60 |
+|ble-pd-60A423C96FC6 | 1.00 | 1.40 | 0.60 |
+
+<div align="center">
+  <img src="image/eFence_layout_2x10_5locators_3tripods_10tag_outdoor.png">  
+</div>  
+</br>  
+
+
+### 4.11.2. Estimated position by RTL lib 
+Below is the estimated position of these ten tags. We collected all of the position and angle data for each tag, the curve for each tag below reflects the X/Y/Z axis value for each tag in 5mins.   
+<div align="center">
+  <img src="image/2x10_5locators_10tag_3tripods_outdoor_position.png">  
+</div> 
+</br>  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # 5. Development and Code Walk Through
 The section below guide you how to implement the AoD projects with SiliconLabs Bluetooth SDK as well as the example projects come with the SDK.   
@@ -463,5 +765,5 @@ For the RAIL Utility, AoX component, please configure the Number of AoX Antenna 
 
 For the soc mode AoD tag, it will send the IQ sample data to the gateway device via bluetooth connection, and the gateway is responsible for angle calculation.
 
-# Conclusion
+# 6. Conclusion
 TBD
