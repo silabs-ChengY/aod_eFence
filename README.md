@@ -24,22 +24,22 @@
   - [4.5. Environment 5 (5 locators, 10 tag, static measurement)](#45-environment-5-5-locators-10-tag-static-measurement)
     - [4.5.1. Real position of the locators and tags.](#451-real-position-of-the-locators-and-tags)
     - [4.5.2. Estimated position by RTL lib](#452-estimated-position-by-rtl-lib)
-  - [4.6. Environment 5 (5 locators, 1 tag, static measurement)](#46-environment-5-5-locators-1-tag-static-measurement)
+  - [4.6. Environment 6 (5 locators, 1 tag, static measurement)](#46-environment-6-5-locators-1-tag-static-measurement)
     - [4.6.1. Real position of the locators and tags.](#461-real-position-of-the-locators-and-tags)
     - [4.6.2. Estimated position by RTL lib](#462-estimated-position-by-rtl-lib)
-  - [4.7. Environment 5 (5 locators, 5 tag, static measurement)](#47-environment-5-5-locators-5-tag-static-measurement)
+  - [4.7. Environment 7 (5 locators, 5 tag, static measurement)](#47-environment-7-5-locators-5-tag-static-measurement)
     - [4.7.1. Real position of the locators and tags.](#471-real-position-of-the-locators-and-tags)
     - [4.7.2. Estimated position by RTL lib](#472-estimated-position-by-rtl-lib)
-  - [4.8. Environment 5 (5 locators, 10 tag, static measurement)](#48-environment-5-5-locators-10-tag-static-measurement)
+  - [4.8. Environment 8 (5 locators, 10 tag, static measurement)](#48-environment-8-5-locators-10-tag-static-measurement)
     - [4.8.1. Real position of the locators and tags.](#481-real-position-of-the-locators-and-tags)
     - [4.8.2. Estimated position by RTL lib](#482-estimated-position-by-rtl-lib)
-  - [4.9. Environment 5 (5 locators, 10 tag, static measurement)](#49-environment-5-5-locators-10-tag-static-measurement)
+  - [4.9. Environment 9 (5 locators, 10 tag, static measurement)](#49-environment-9-5-locators-10-tag-static-measurement)
     - [4.9.1. Real position of the locators and tags.](#491-real-position-of-the-locators-and-tags)
     - [4.9.2. Estimated position by RTL lib](#492-estimated-position-by-rtl-lib)
-  - [4.10. Environment 5 (5 locators, 10 tag, static measurement)](#410-environment-5-5-locators-10-tag-static-measurement)
+  - [4.10. Environment 10 (5 locators, 10 tag, static measurement)](#410-environment-10-5-locators-10-tag-static-measurement)
     - [4.10.1. Real position of the locators and tags.](#4101-real-position-of-the-locators-and-tags)
     - [4.10.2. Estimated position by RTL lib](#4102-estimated-position-by-rtl-lib)
-  - [4.11. Environment 5 (5 locators, 10 tags, static measurement)](#411-environment-5-5-locators-10-tags-static-measurement)
+  - [4.11. Environment 11 (5 locators, 10 tags, static measurement)](#411-environment-11-5-locators-10-tags-static-measurement)
     - [4.11.1. Real position of the locators and tags.](#4111-real-position-of-the-locators-and-tags)
     - [4.11.2. Estimated position by RTL lib](#4112-estimated-position-by-rtl-lib)
 - [5. Development and Code Walk Through](#5-development-and-code-walk-through)
@@ -375,7 +375,7 @@ Below is the estimated position of these ten tags. We collected all of the posit
 
 
 
-## 4.6. Environment 5 (5 locators, 1 tag, static measurement)
+## 4.6. Environment 6 (5 locators, 1 tag, static measurement)
 * Location: Outdoor environment, sharing bicycle parking area.
 * Locator height from floor: 0.0 m   
 * Tag height from floor: 0.6 m   
@@ -421,7 +421,7 @@ Below is the estimated position of the only 1 tag. We collected all of the posit
 </br>  
 
 
-## 4.7. Environment 5 (5 locators, 5 tag, static measurement)
+## 4.7. Environment 7 (5 locators, 5 tag, static measurement)
 * Location: Outdoor environment, sharing bicycle parking area.
 * Locator height from floor: 0.0 m   
 * Tag height from floor: 0.6 m   
@@ -468,7 +468,7 @@ Below is the estimated position of the 5 tag. We collected all of the position a
 
 
 
-## 4.8. Environment 5 (5 locators, 10 tag, static measurement)
+## 4.8. Environment 8 (5 locators, 10 tag, static measurement)
 * Location: Outdoor environment, sharing bicycle parking area.
 * Locator height from floor: 0.0 m   
 * Tag height from floor: 0.6 m   
@@ -526,7 +526,7 @@ Below is the estimated position of these ten tags. We collected all of the posit
 
 
 
-## 4.9. Environment 5 (5 locators, 10 tag, static measurement)
+## 4.9. Environment 9 (5 locators, 10 tag, static measurement)
 * Location: Outdoor environment, sharing bicycle parking area.
 * Locator height from floor: 0.0 m   
 * Tag height from floor: 0.6 m   
@@ -580,7 +580,7 @@ Below is the estimated position of these ten tags. We collected all of the posit
 </br>  
 
 
-## 4.10. Environment 5 (5 locators, 10 tag, static measurement)
+## 4.10. Environment 10 (5 locators, 10 tag, static measurement)
 * Location: Outdoor environment, sharing bicycle parking area.
 * Locator height from floor: 1.5 m   
 * Tag height from floor: 0.6 m   
@@ -632,7 +632,7 @@ Below is the estimated position of these ten tags. We collected all of the posit
 
 
 
-## 4.11. Environment 5 (5 locators, 10 tags, static measurement)
+## 4.11. Environment 11 (5 locators, 10 tags, static measurement)
 * Location: Outdoor environment, sharing bicycle parking area.
 * Locator height from floor: 2 locators on ground and 3 on tripods, the height of the tripod is 1.5 m   
 * Tag height from floor: 0.6 m   
