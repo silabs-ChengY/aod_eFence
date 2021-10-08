@@ -494,16 +494,16 @@ And we attached all of the tags on the locker of the sharing bicycle during the 
 
 |Tag ID | X | Y | Z |
 |-|-|-|-|
-|ble-pd-60A423C968C6 | 1.00 | 8.70 | 0.60 |
-|ble-pd-60A423C96896 | 1.00 | 7.80 | 0.60 |
-|ble-pd-60A423C96B13 | 1.00 | 6.90 | 0.60 |
-|ble-pd-60A423C96AB5 | 1.00 | 6.00 | 0.60 |
-|ble-pd-60A423C96721 | 1.00 | 5.10 | 0.60 |
-|ble-pd-60A423C96B3C | 1.00 | 4.20 | 0.60 |
-|ble-pd-60A423C96746 | 1.00 | 3.30 | 0.60 |
-|ble-pd-60A423C9689C | 1.00 | 2.40 | 0.60 |
-|ble-pd-60A423C96825 | 1.00 | 1.50 | 0.60 |
-|ble-pd-60A423C96FC6 | 1.00 | 0.60 | 0.60 |
+|ble-pd-60A423C96896 | 1.00 | 8.70 | 0.60 |
+|ble-pd-60A423C96B13 | 1.00 | 7.80 | 0.60 |
+|ble-pd-60A423C96AB5 | 1.00 | 6.90 | 0.60 |
+|ble-pd-60A423C96721 | 1.00 | 6.00 | 0.60 |
+|ble-pd-60A423C96B3C | 1.00 | 5.10 | 0.60 |
+|ble-pd-60A423C96746 | 1.00 | 4.20 | 0.60 |
+|ble-pd-60A423C9689C | 1.00 | 3.30 | 0.60 |
+|ble-pd-60A423C96825 | 1.00 | 2.40 | 0.60 |
+|ble-pd-60A423C96FC6 | 1.00 | 1.50 | 0.60 |
+|ble-pd-60A423C968C6 | 1.00 | 0.60 | 0.60 |
 
 <div align="center">
   <img src="image/eFence_layout_2x10_5locators_10tag_outdoor.png">  
@@ -606,16 +606,16 @@ And we attached all of the tags on the locker of the sharing bicycle during the 
 
 |Tag ID | X | Y | Z |
 |-|-|-|-|
-|ble-pd-60A423C968C6 | 1.00 | 8.60 | 0.60 |
-|ble-pd-60A423C96896 | 1.00 | 7.80 | 0.60 |
-|ble-pd-60A423C96B13 | 1.00 | 7.00 | 0.60 |
-|ble-pd-60A423C96AB5 | 1.00 | 6.20 | 0.60 |
-|ble-pd-60A423C96721 | 1.00 | 5.40 | 0.60 |
-|ble-pd-60A423C96B3C | 1.00 | 4.60 | 0.60 |
-|ble-pd-60A423C96746 | 1.00 | 3.80 | 0.60 |
-|ble-pd-60A423C9689C | 1.00 | 3.00 | 0.60 |
-|ble-pd-60A423C96825 | 1.00 | 2.20 | 0.60 |
-|ble-pd-60A423C96FC6 | 1.00 | 1.40 | 0.60 |
+|ble-pd-60A423C96896 | 1.00 | 8.60 | 0.60 |
+|ble-pd-60A423C96B13 | 1.00 | 7.80 | 0.60 |
+|ble-pd-60A423C96AB5 | 1.00 | 7.00 | 0.60 |
+|ble-pd-60A423C96721 | 1.00 | 6.20 | 0.60 |
+|ble-pd-60A423C96B3C | 1.00 | 5.40 | 0.60 |
+|ble-pd-60A423C96746 | 1.00 | 4.60 | 0.60 |
+|ble-pd-60A423C9689C | 1.00 | 3.80 | 0.60 |
+|ble-pd-60A423C96825 | 1.00 | 3.00 | 0.60 |
+|ble-pd-60A423C96FC6 | 1.00 | 2.20 | 0.60 |
+|ble-pd-60A423C968C6 | 1.00 | 1.40 | 0.60 |
 
 <div align="center">
   <img src="image/eFence_layout_2x10_5locators_5tripods_10tag_outdoor.png">  
