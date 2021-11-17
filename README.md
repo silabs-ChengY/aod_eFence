@@ -42,6 +42,9 @@
   - [4.11. Environment 11 (5 locators, 10 tags, static measurement)](#411-environment-11-5-locators-10-tags-static-measurement)
     - [4.11.1. Real position of the locators and tags.](#4111-real-position-of-the-locators-and-tags)
     - [4.11.2. Estimated position by RTL lib](#4112-estimated-position-by-rtl-lib)
+  - [4.12. Environment 9 (5 locators, 10 tag, static measurement)](#412-environment-9-5-locators-10-tag-static-measurement)
+    - [4.12.1. Real position of the locators and tags.](#4121-real-position-of-the-locators-and-tags)
+    - [4.12.2. Estimated position by RTL lib](#4122-estimated-position-by-rtl-lib)
 - [5. Development and Code Walk Through](#5-development-and-code-walk-through)
   - [5.1. Create the AoD Beacon project base on soc-empty example](#51-create-the-aod-beacon-project-base-on-soc-empty-example)
   - [5.2. Create NCP mode AoD asset base on ncp example](#52-create-ncp-mode-aod-asset-base-on-ncp-example)
@@ -580,6 +583,11 @@ Below is the estimated position of these ten tags. We collected all of the posit
 </br>  
 
 
+
+
+
+
+
 ## 4.10. Environment 10 (5 locators, 10 tag, static measurement)
 * Location: Outdoor environment, sharing bicycle parking area.
 * Locator height from floor: 1.5 m   
@@ -679,7 +687,48 @@ Below is the estimated position of these ten tags. We collected all of the posit
 
 
 
+## 4.12. Environment 9 (5 locators, 10 tag, static measurement)
+* Location: Outdoor environment, sharing bicycle parking area.
+* Locator height from floor: 0.0 m   
+* Tag height from floor: 0.6 m   
+* Testing environment: 2x10m2 area with 10 out of 25 bicycles have tag mounted.
+* Location estimation mode, Two-dimensional high accuracy mode, angle constraint support
 
+Similar as the test environment 4.9, there are around 25 sharing bicycle in the 2x10m area. And we attached all of the tags on the locker of the sharing bicycle during the test as below.
+
+### 4.12.1. Real position of the locators and tags.
+|Locator ID | X | Y | Z | Orientation
+|-|-|-|-|-|
+|#1 ble-pd-588E81A54222 | 2.00 | 10.00 | 0.00 | (0, 0, 90) |
+|#2 ble-pd-588E8166AF43 | 0.00 | 2.50 | 0.00 | (0, 0, 180) |
+|#3 ble-pd-84FD27EEE4FF | 2.00 | 0.00 | 0.00 | (0, 0, 270) |
+|#4 ble-pd-588E81A5421C | 0.00 | 7.50 | 0.00 | (0, 0, 180) |
+|#5 ble-pd-588E8166AFD7 | 2.00 | 5.00 | 0.00 | (0, 0, 0) |
+
+<div align="center">
+  <img src="image/eFence_layout_2x10_5locators_10tags_xxobjects.png">  
+</div>  
+</br>  
+
+|Tag ID | X | Y | Z |
+|-|-|-|-|
+|ble-pd-60A423C968C6 | 1.00 | 8.60 | 0.60 |
+|ble-pd-60A423C96896 | 1.00 | 7.80 | 0.60 |
+|ble-pd-60A423C96B13 | 1.00 | 7.00 | 0.60 |
+|ble-pd-60A423C96AB5 | 1.00 | 6.20 | 0.60 |
+|ble-pd-60A423C96721 | 1.00 | 5.40 | 0.60 |
+|ble-pd-60A423C96B3C | 1.00 | 4.60 | 0.60 |
+|ble-pd-60A423C96746 | 1.00 | 3.80 | 0.60 |
+|ble-pd-60A423C9689C | 1.00 | 3.00 | 0.60 |
+|ble-pd-60A423C96825 | 1.00 | 2.20 | 0.60 |
+|ble-pd-60A423C96FC6 | 1.00 | 1.40 | 0.60 |
+
+### 4.12.2. Estimated position by RTL lib 
+Below is the estimated position of these ten tags. We collected all of the position and angle data for each tag, the curve for each tag below reflects the X/Y/Z axis value for each tag in 5mins.   
+<div align="center">
+  <img src="image/2x10_5locators_10tag_outdoor_position_angleConstraint.png">  
+</div> 
+</br>  
 
 
 # 5. Development and Code Walk Through
