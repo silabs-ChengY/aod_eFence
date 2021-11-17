@@ -42,7 +42,7 @@
   - [4.11. Environment 11 (5 locators, 10 tags, static measurement)](#411-environment-11-5-locators-10-tags-static-measurement)
     - [4.11.1. Real position of the locators and tags.](#4111-real-position-of-the-locators-and-tags)
     - [4.11.2. Estimated position by RTL lib](#4112-estimated-position-by-rtl-lib)
-  - [4.12. Environment 9 (5 locators, 10 tag, static measurement, angle constraint support)](#412-environment-9-5-locators-10-tag-static-measurement-angle-constraint-support)
+  - [4.12. Environment 12 (5 locators, 10 tag, static measurement, angle constraint support)](#412-environment-12-5-locators-10-tag-static-measurement-angle-constraint-support)
     - [4.12.1. Real position of the locators and tags.](#4121-real-position-of-the-locators-and-tags)
     - [4.12.2. Estimated position by RTL lib](#4122-estimated-position-by-rtl-lib)
 - [5. Development and Code Walk Through](#5-development-and-code-walk-through)
@@ -687,7 +687,7 @@ Below is the estimated position of these ten tags. We collected all of the posit
 
 
 
-## 4.12. Environment 9 (5 locators, 10 tag, static measurement, angle constraint support)
+## 4.12. Environment 12 (5 locators, 10 tag, static measurement, angle constraint support)
 * Location: Outdoor environment, sharing bicycle parking area.
 * Locator height from floor: 0.0 m   
 * Tag height from floor: 0.6 m   
