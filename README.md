@@ -82,16 +82,18 @@ Running the demo requires the following devices:
 # 3. Demos and Examples
 ## 3.1. Sample Applications
 
-* **soc_aod_beacon** should be built in Studio, and flashed to the Antenna array board. This will act as a beacon (CTE transmitter)   
+* **soc_aod_beacon** should be built in Studio, and flashed to the EFR32BG22 Direction Finding Radio Board (BRD4185A). This will act as a beacon (CTE transmitter)   
 * **ncp_aod_asset** should be built in Studio and flashed to a Thunderboard BG22. This will act as the asset, that receives the CTE and wants to determine its position.   
 * **soc_aod_asset** should be built in Studio and flashed to Tunderboard BG22, it is the SoC mode aod asset that do the I/Q sample and transfer it to the gateway via bluetooth connection. Due to the limited resource, it cannot do any angle estimation or position calculation locally.
-* **aod_locator** is the host sample app running on the host demonstrates the CTE Receiver feature and the usage of the angle estimation feature of the RTL library.   
+* **aod_locator** is the host sample app running on the host demonstrates the CTE Receiver feature and the usage of the angle estimation feature of the RTL library. The hose example should be used with the **ncp_aod_asset** together.   
 * **aod_gateway** is similar as **aod_locator** but it collects the I/Q sample from the SoC mode aod asset tag via bluetooth connection. And calculate the angle and position accordingly.
-* **aod_gui** is a python based script that can subscribe the MQTT topic published by aod_gateway that contains the position information of the tags, and show the position information of the tag with GUI.
+* **aod_gui** is a python based script that can subscribe the MQTT topic published by aod_gateway that contains the position information of the tags, and show the position information of the tag with GUI. And the python script can also record all of the angle and position information for each tag and save them into excel files.   
 
 ## 3.2. Demo Setup
 There are two kind of system structure for the multi-transmitter AoD demo. Customer can choose anyone of them depends on their own system design.   
+
 In the first case, the AoD tag asset will work in NCP mode for I/Q sample, the host application **aod_locator** runs on the host MCU or PC will receive the I/Q sample result from the tag via BGAPI interface, and calculate the angle and position according to the I/Q data.   
+
 In the second case, the AoD tag asset work in SoC mode for I/Q sample, after finishing the sampling it will transmit the I/Q sample data to the aod gateway via Bluetooth connection. After receiving the I/Q sample from each AoD tag, the gateway runs **aod_gateway** application will calculate the angle and position.   
 
 For getting start with these two kind of multi-transmitter AoD demos, please follow the steps below.    
